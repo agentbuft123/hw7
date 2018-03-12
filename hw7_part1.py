@@ -12,7 +12,7 @@ try:
     CACHE_DICTION = json.loads(cache_contents)
     cache_file.close()
 
-# if there was no file, no worries. There will be soon!
+
 except:
     CACHE_DICTION = {}
 
@@ -26,8 +26,7 @@ def make_request_using_cache(url, header):
     if unique_ident in CACHE_DICTION:
         return CACHE_DICTION[unique_ident]
 
-    ## if not, fetch the data afresh, add it to the cache,
-    ## then write the cache to file
+
     else:
         print("Making a request for new data...")
         # Make the request and cache the new data
@@ -38,8 +37,6 @@ def make_request_using_cache(url, header):
         fw.write(dumped_json_cache)
         fw.close() # Close the open file
         return CACHE_DICTION[unique_ident]
-
-
 
 
 #### Your Part 1 solution goes here ####
