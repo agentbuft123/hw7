@@ -84,7 +84,6 @@ def get_umsi_data():
   file.close()
 
 
-
 #### Execute funciton, get_umsi_data, here ####
 
 get_umsi_data()

@@ -9,5 +9,6 @@ json_dict = json.loads(dict)
 for k in json_dict:
     count +=1
 
+
 #### Your answer output (change the value in the variable, count)####
 print('The number of PhD students: ', count)
