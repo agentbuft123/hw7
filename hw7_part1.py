@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 
 header = {'User-Agent': 'SI_CLASS'}
 
+
 CACHE_FNAME = 'cache.json'
 try:
     cache_file = open(CACHE_FNAME, 'r')
@@ -40,6 +41,7 @@ def make_request_using_cache(url, header):
 
 
 
+
 #### Your Part 1 solution goes here ####
 
 baseurl = 'https://www.si.umich.edu'
@@ -72,10 +74,10 @@ def get_umsi_data():
   titles = content.find_all('div', class_="field field-name-field-person-titles field-type-text field-label-hidden")
 
   count = 0
-  for i in titles:
-    titleslist.append(i.text)
-  for i in names:
-    umsi_titles[i.text] = titleslist[count] + ' and ' + emails[count]
+  for k in titles:
+    titleslist.append(k.text)
+  for k in names:
+    umsi_titles[k.text] = titleslist[count] + ' and ' + emails[count]
     count += 1
 
   dumps = json.dumps(umsi_titles)
@@ -83,16 +85,6 @@ def get_umsi_data():
   file.write(dumps)
 
   file.close()
-
-
-
-
-
-
-
-
-
-
 
 
 
